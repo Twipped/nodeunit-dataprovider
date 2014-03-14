@@ -1,0 +1,26 @@
+{
+  "name": "nodeunit-dataprovider",
+  "version": "0.0.1",
+  "description": "Helper function for nodeunit to generate sets of tests using arrays of test data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChiperSoft/nodeunit-dataprovider"
+  },
+  "keywords": [
+    "test",
+    "testing",
+    "nodeunit",
+    "dataprovider",
+    "data-provider"
+  ],
+  "author": "Jarvis Badgley <chiper@chipersoft.com> (http://chipersoft.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChiperSoft/nodeunit-dataprovider/issues"
+  },
+  "homepage": "https://github.com/ChiperSoft/nodeunit-dataprovider"
+}
