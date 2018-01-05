@@ -1,21 +1,29 @@
-
 module.exports = function withProvider(data, testFunction) {
-	var suite = {};
-	var length = data.length;
-	var name;
-	for (var i=0; i<length; ++i) {
-		name = JSON.stringify(data[i]);
-		if (name.length > 20) {
-			name = '#' + i + ': ' + name;
-		} else {
-			name = '#' + i;
-		}
-		suite[name] = (function(i){
-			return function(test) {
-				testFunction(test, data[i], i);
-			};
-		})(i);
-	}
+    var suite = {};
 
-	return suite;
+    function addToSuite(label, data, index) {
+        suite[label] = (function (data, index) {
+            return function (test) {
+                testFunction(test, data, index);
+            };
+        })(data, index);
+    }
+
+    if (data instanceof Array) {
+        var length = data.length;
+        for (var index = 0; index < length; ++index) {
+            var name = JSON.stringify(data[index]);
+            addToSuite('#' + index + ': ' + name.substr(0, 20) + (name.length > 20 ? ' ...' : ''), data[index], index);
+        }
+    } else {
+        var index = 0;
+        for (var name in data) {
+            if (data.hasOwnProperty(name)) {
+                ++index;
+                addToSuite('#' + index + ': ' + name, data[name], name);
+            }
+        }
+    }
+
+    return suite;
 };
