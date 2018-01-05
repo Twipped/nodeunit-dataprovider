@@ -19,8 +19,7 @@ module.exports = function withProvider(data, testFunction) {
 		var index = 0;
 		for (var name in data) {
 			if (data.hasOwnProperty(name)) {
-				++index;
-				addToSuite('#' + index + ': ' + name, data[name], name);
+				addToSuite('#' + index++ + ': ' + name, data[name], name);
 			}
 		}
 	}

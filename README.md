@@ -55,9 +55,9 @@ test.js
 ✔ doubled result - #0: {"input":4,"output": ...
 ✔ doubled result - #1: {"input":8,"output": ...
 ✔ doubled result - #2: {"input":16,"output" ...
-✔ doubled result with named doubles - #1: Set1
-✔ doubled result with named doubles - #2: Set2
-✔ doubled result with named doubles - #3: Set3
+✔ doubled result with named doubles - #0: Set1
+✔ doubled result with named doubles - #1: Set2
+✔ doubled result with named doubles - #2: Set3
 
 OK: 6 assertions (14ms)
 ```
